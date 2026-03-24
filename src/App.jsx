@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import ChannelDetail from "./components/ChannelDetail";
 import SearchFeed from "./components/SearchFeed";
 import Feed from "./components/Feed";
 import VideoDetail from "./components/VideoDetail";
 import NavBar from "./components/NavBar";
+import { BrowserRouter,Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
-    </>
+    </> 
   );
 }
 
