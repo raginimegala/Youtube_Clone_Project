@@ -6,15 +6,15 @@ import { fetchFromAPI } from "../Utils/FetchFromAPI";
 function Feed() {
 
   const [selectedCategory, setSelectedCategory] = useState("New")
-  
+  const [videos, setvideos] =useState[""]
 
   useEffect(() =>{
-    fetchFromAPI(`search?part=snipper&q={selectedCategory}`)
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) => setvideos(data.items))
 
-  },[selectedCategory])
+  },[selectedCategory]);
   return (
     <>
-      <div className="FeedContainer">
+      <div className="FeedContainer"> 
         <div className="FeedSideBar">
           <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
         </div>
