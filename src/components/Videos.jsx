@@ -1,10 +1,21 @@
 import React from 'react'
+import VideoCard from './videoCard'
+import ChannelCard from './channelCard'
 
-function Videos() {
+function Videos({videos}) {
+
+    console.log(videos)
     return (
         <>
-        console.log(videos)
-        <div>Videos</div>
+        <div>
+            {videos.map((item, index)=>(
+                <p key={index}>
+                    {item.id.videoId && <VideoCard video={item}/>}
+                    {item.id.channelId && <ChannelCard channelDetail={item}/>}
+                </p>
+            ))}        
+            </div>
+      
         </>
     )
 }

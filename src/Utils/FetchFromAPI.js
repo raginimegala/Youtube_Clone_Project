@@ -1,17 +1,18 @@
 import axios from "axios";
 
-const BASE_URL = "https://youtube-v31.p.rapidapi.com'"
+const BASE_URL = "https://youtube-v31.p.rapidapi.com"
 
 const options = {
+
+  method: 'GET',
     
   params: {
    
     maxResults: '50'
   },
   headers: {
-    'x-rapidapi-key': import.meta.env.VITE_KEY,
+    'x-rapidapi-key': import.meta.env.VITE_RAPID_API_KEY,
     'x-rapidapi-host': 'youtube-v31.p.rapidapi.com',
-    'Content-Type': 'application/json'
   }
 };
 
@@ -21,11 +22,9 @@ try {
 } catch (error) {
 	console.error(error);
 }
+export const fetchFromAPI = async(url) => {
 
-
-export const fetchFromAPI = async() => {
-
-  const {data} = await axios.get(`{BASE_URL}/{url}`,options)
+  const {data} = await axios.get(`${BASE_URL}/${url}`,options)
   return data;
   
 }

@@ -4,27 +4,31 @@ import Videos from "./Videos";
 import { fetchFromAPI } from "../Utils/FetchFromAPI";
 
 function Feed() {
+  const [selectedCategory, setSelectedCategory] = useState("New");
+  const [videos, setvideos] = useState([]);
 
-  const [selectedCategory, setSelectedCategory] = useState("New")
-  const [videos, setvideos] =useState[""]
-
-  useEffect(() =>{
-    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) => setvideos(data.items))
-
-  },[selectedCategory]);
+  useEffect(() => {
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
+      setvideos(data.items),
+    );
+  }, [selectedCategory]);
   return (
     <>
-      <div className="FeedContainer"> 
-        <div className="FeedSideBar">
-          <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-        </div>
-        <div className="FeedContent">
-          <h5 className="h5Feed">CopyRight 2026</h5>
-        </div>
-        <div className="FeedContainer">
-          
-            <h4 className="FeedTitle"><span className="FeedHighlight">{selectedCategory}</span></h4>
-        </div>
+      <div className="FeedContainer">
+
+        
+        <aside className="FeedSideBar">
+          <SideBar
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          /><p className="h5Feed">CopyRight 2026</p>
+        </aside>
+
+        
+        <main className="FeedContent">
+          <span className="FeedHighlight">{selectedCategory}</span>   <span className="color">Video</span>
+        </main>
+        <Videos videos={videos} />
       </div>
     </>
   );

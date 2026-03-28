@@ -7,6 +7,7 @@ import Feed from "./components/Feed";
 import VideoDetail from "./components/VideoDetail";
 import NavBar from "./components/NavBar";
 import { BrowserRouter,Routes, Route } from "react-router-dom";
+import "./App.css"
 
 function App() {
   return (
