@@ -6,8 +6,8 @@ function VideoCard({video : {id:{videoId}, snippet}}) {
     return (
         <>
         <div className='videoDetail'>
-            <a href="{videoId? '/video/${videoId}' : demoVideourl}">
-            <img src={snippet?.thumbnails?.high?.url} alt={snippet?.title}/></a>
+            <Link to="{videoId? '/video/${videoId}' : demoVideourl}"></Link>
+            <img src={snippet?.thumbnails?.high?.url} alt={snippet?.title}/>
 
             <div>
             <Link to="{videoId? '/video/${videoId}' : demoVideourl}"></Link>
