@@ -9,10 +9,10 @@ function Videos({videos}) {
         <>
         <div>
             {videos.map((item, index)=>(
-                <p key={index}>
+                <div key={index}>
                     {item.id.videoId && <VideoCard video={item}/>}
                     {item.id.channelId && <ChannelCard channelDetail={item}/>}
-                </p>
+                </div>
             ))}        
             </div>
       

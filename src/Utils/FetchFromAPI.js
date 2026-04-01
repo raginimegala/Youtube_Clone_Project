@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://youtube-v31.p.rapidapi.com"
+const BASE_URL = "https://youtube-v31.p.rapidapi.com";
 
 const options = {
 
@@ -8,7 +8,7 @@ const options = {
     
   params: {
    
-    maxResults: '50'
+    maxResults: '10'
   },
   headers: {
     'x-rapidapi-key': import.meta.env.VITE_RAPID_API_KEY,
