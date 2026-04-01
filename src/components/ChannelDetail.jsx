@@ -2,7 +2,7 @@ import React, { use } from "react";
 import { useEffect,useState } from "react";
 import { useParams } from "react-router-dom";
 import {Videos} from "./Videos";
-import { ChannelCard } from "./channelCard";
+import ChannelCard from "./channelCard";
 import { fetchFromAPI } from "../Utils/FetchFromAPI";
 
 function ChannelDetail() {
@@ -21,6 +21,9 @@ function ChannelDetail() {
     <div>
      <div>
       <ChannelCard channelDetails={channelDetails} />
+     </div>
+     <div>
+      <Videos videos={videoDetails}/>
      </div>
     </div>
             
