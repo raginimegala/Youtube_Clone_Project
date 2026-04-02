@@ -8,7 +8,7 @@ const options = {
     
   params: {
    
-    maxResults: '10'
+    maxResults: '10',
   },
   headers: {
     'x-rapidapi-key': import.meta.env.VITE_RAPID_API_KEY,

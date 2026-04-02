@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 function SearchBar() {
 
@@ -7,11 +8,16 @@ function SearchBar() {
 
     const handleSubmit = (event )=>{
         event.preventDefault();
+
+        if(searchTerm){Navigate(`search/${searchTerm}`)
+        
+        setSearchTerm("")}
     
     }
     return (
         <form className="Paper-SearchBar" onSubmit={handleSubmit}>
             <input className='Search-Bar'
+            onSubmit={handleSubmit}
             value ={searchTerm}
             placeholder='Search...'
             onChange={(e)=>{setSearchTerm(e.target.value)}}/>
