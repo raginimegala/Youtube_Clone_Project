@@ -2,7 +2,9 @@ import React from 'react'
 import VideoCard from './videoCard'
 import ChannelCard from './channelCard'
 
-function Videos({videos}) {
+function Videos({videos, direction}) {
+
+    if(!videos.length) return "Loading..."
 
     console.log(videos)
     return (
